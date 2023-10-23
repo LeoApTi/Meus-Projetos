@@ -6,11 +6,16 @@ import openpyxl
 import pyperclip
 import pyautogui
 
+# Abrir o arquivo 'xlsx' e a aba correspondente
 wb = openpyxl.load_workbook('produtos_ficticios.xlsx')
 ws = wb['Produtos']
+
+# Abrir o Microsoft Edge e acessar o site
 driver = webdriver.Edge()
 driver.get('https://cadastro-produtos-devaprender.netlify.app/')
 sleep(5)
+
+# Copiar e colar os valores de cada coluna das linhas em seus respectivos campos no site
 for row in ws.iter_rows(min_row=2, max_row=101):
     nome_produto = row[0].value
     pyperclip.copy(nome_produto)
@@ -42,10 +47,12 @@ for row in ws.iter_rows(min_row=2, max_row=101):
     barra = driver.find_element(By.XPATH, '//*[@id="dimensions"]')
     barra.send_keys(dimensao)
 
+# Clicar no botão para prosseguir
     botao = driver.find_element(By.XPATH, '//*[@class="btn btn-primary me-2"]')
     botao.click()
     sleep(3)
-
+    
+# Continuar com o preenchimento dos dados
     preco = row[6].value
     pyperclip.copy(preco)
     barra = driver.find_element(By.XPATH, '//*[@id="price"]')
@@ -66,6 +73,7 @@ for row in ws.iter_rows(min_row=2, max_row=101):
     barra = driver.find_element(By.XPATH, '//*[@id="color"]')
     barra.send_keys(cor)
 
+# Selecionar o tamanho dentre as opções existentes
     tamanho = row[10].value
     pyperclip.copy(tamanho)
     barra = driver.find_element(By.XPATH, '//*[@id="size"]')
@@ -84,10 +92,12 @@ for row in ws.iter_rows(min_row=2, max_row=101):
     barra = driver.find_element(By.XPATH, '//*[@id="material"]')
     barra.send_keys(material)
 
+# Clicar no botão para prosseguir novamente
     botao2 = driver.find_element(By.XPATH, '//*[@class="btn btn-primary me-2"]')
     botao2.click()
     sleep(3)
 
+# Preenchimento dos dados restantes
     fabricante = row[12].value
     pyperclip.copy(fabricante)
     barra = driver.find_element(By.XPATH, '//*[@id="manufacturer"]')
@@ -113,12 +123,16 @@ for row in ws.iter_rows(min_row=2, max_row=101):
     barra = driver.find_element(By.XPATH, '//*[@id="warehouse_location"]')
     barra.send_keys(localizacao_no_armazem)
 
+# Clicar no botão para finalizar o cadastro
     botao3 = driver.find_element(By.XPATH, '//*[@class="btn btn-primary me-2"]')
     botao3.click()
     sleep(3)
+
+# Clicar no 'ok' do alerta que aparece na tela
     pyautogui.hotkey('Enter')
     sleep(3)
 
+# Clicar no botão para adicionar um novo cadastro
     botao4 = driver.find_element(By.XPATH, '//*[@class="btn btn-primary"]')
     botao4.click()
     sleep(3)
