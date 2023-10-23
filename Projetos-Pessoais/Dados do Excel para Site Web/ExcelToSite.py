@@ -11,7 +11,7 @@ ws = wb['Produtos']
 driver = webdriver.Edge()
 driver.get('https://cadastro-produtos-devaprender.netlify.app/')
 sleep(5)
-for row in ws.iter_rows(min_row=2, max_row=22):
+for row in ws.iter_rows(min_row=2, max_row=101):
     nome_produto = row[0].value
     pyperclip.copy(nome_produto)
     barra = driver.find_element(By.XPATH, '//*[@id="product_name"]')
