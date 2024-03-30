@@ -10,7 +10,7 @@ negativos e zeros que foram inseridos.
 A entrada deve receber valores inteiros.
 
 numero: valor inteiro que pode ser positivo, negativo ou zero. Lembrando que a entrada zero deve encerrar o programa.
-Saída:
+# Saída:
 O código deverá retornar uma mensagem (string) informando se o número é positivo ou não. Ao receber o valor 0, ele deverá encerrar o e informar quantos números foram positivos e negativos.
 
 ## Exemplos
