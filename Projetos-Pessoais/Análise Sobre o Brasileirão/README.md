@@ -1,15 +1,25 @@
-# Jogo da Forca
+# Análise de Dados do Campeonato Brasileiro
 
-## Apresentação Breve
-O jogo da forca é um jogo de adivinhação onde um jogador pensa em uma palavra e os outros tentam adivinhar quais letras estão nessa palavra. Segue abaixo como jogar:
+## Objetivo
+Mostrar alguns dados sobre o Capeonato Brasileiro de Futebol por meio da análise de um dataset do site Kaggle e desenvolver minhas habilidades técnicas, de resolução de problemas e pensamento crítico.
 
-* Um jogador escolhe uma palavra e a escreve em uma linha, usando traços no lugar das letras. Por exemplo, "_ _ _ _ _ _" para a palavra "banana".
+## Desenvolvimento
+Para realizar esta tarefa, busquei responder as seguintes perguntas:
 
-* Os outros jogadores tentam adivinhar letras que possam estar na palavra. Cada vez que uma letra correta é sugerida, o jogador que escolheu a palavra preenche os traços com essa letra, nas posições corretas.
+- Em quais minutos saem mais gols no geral? E por clube?
+- Quantos gols cada time fez no total? Quantos foram de Penalty? Quantos de bola rolando/ parada? Quantos contra? Quantos gols a favor (retirando os gols contra)  no total?
+- Quais os atletas, deste período, que mais fizeram gols? E quantos gols fizeram? Em qual clube estavam?
+- Dado um respectivo clube, quais foram os atletas que fizeram mais gols?
+- Qual foi a média de gols total durante esse período?
 
-* Se um jogador sugere uma letra que não está na palavra, o jogador que escolheu a palavra desenha uma parte do corpo de um enforcado (geralmente começando com a cabeça e seguindo com o corpo, braços e pernas) em uma forca desenhada no papel ou na tela.
+E para responder aquelas, utilizei a biblioteca Pandas da linguagem de programação Python. Abaixo deixo alguns métodos usados:
 
-* O jogo continua até que os jogadores adivinhem corretamente a palavra ou o desenho do enforcado esteja completo. Se os jogadores adivinharem a palavra antes do desenho estar completo, eles ganham. Se o desenho do enforcado estiver completo antes de a palavra ser adivinhada, os jogadores perdem.
+- groupby(): mostra os valores de acordo com um determinado grupo
+- query(): faz uma consulta no dataframe
+- value_counts(): contagem de valores
+- head(): mostra um determinado número de linhas
+- read_csv(): ler um arquivo '.csv'
+- sort_values(): ordenar respectivos dados na ordem crescente ou decrescente
 
-## Meu objetivo
-Estou a fazer o curso Fundamentos de Linguagem Python Para Análise de Dados e Data Science na plataforma [Data Science Academy (DSA)](https://www.datascienceacademy.com.br) e dentro deste há alguns projetos a se fazer, sendo o jogo da forca um deles. Então me desafiei a criar o jogo sem auxílio dos vídeos disponíveis na DSA e decidi dividir em duas versões (v1 e v2), naquela é um código 'cru', sem simplificações, nesta um código mais rápido utilizando os materiais oferecidos pelo curso como auxílio.
+## Conclusão
+Me diverti bastante utulizando a biblioteca Pandas pela primeira vez e percebi que ela é muito importante para analisar dados, muitas das vezes facilitando processos que demorariam bastante no excel.
